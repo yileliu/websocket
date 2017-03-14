@@ -7,3 +7,7 @@ block content
   script(src="./scripts/socket.io-client/dist/socket.io.js")
   script.
     var socket = io.connect('/');
+    socket.on('announcements', function(data) {
+        console.log('Got announcement:', data.message);
+    });
+    socket.emit('event', { message: 'Hey, I have an important message!' });
