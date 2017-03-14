@@ -1,0 +1,23 @@
+{
+  "name": "websocketdemo",
+  "version": "1.0.0",
+  "description": "a demo for html5 websocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yileliu/websocketDemo.git"
+  },
+  "author": "yile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yileliu/websocketDemo/issues"
+  },
+  "homepage": "https://github.com/yileliu/websocketDemo#readme",
+  "dependencies": {
+    "websocket": "^1.0.24"
+  }
+}
