@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "chat": "node chatserver.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/yileliu/websocketDemo#readme",
   "dependencies": {
+    "jquery": "^3.1.1",
     "websocket": "^1.0.24"
   }
 }
