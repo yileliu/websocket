@@ -11,3 +11,15 @@ block content
         console.log('Got announcement:', data.message);
     });
     socket.emit('event', { message: 'Hey, I have an important message!' });
+    socket.on('stats', function(data) {
+        console.log('Connected clients:', data.numClients);
+    });
+
+    var socketAbuse = io.connect('/stackabuse');
+    socketAbuse.on('abuse', function(data){
+        console.log('room:', data.room)
+    });
+
+     socketAbuse.on('stats', function(data) {
+        console.log(data.data);
+    });

@@ -22,6 +22,7 @@ app.set('port', port);
 var server = http.createServer(app);
 
 var io = require('socket.io')(server);
+var numClients = 0;
 
 io.on('connection', function(socket) {  
     socket.emit('announcements', { message: 'A new user has joined!' });
@@ -29,6 +30,31 @@ io.on('connection', function(socket) {
     socket.on('event', function(data) {
         console.log('A client sent us this dumb message:', data.message);
     });
+
+    numClients++;
+    io.emit('stats', { numClients: numClients });
+
+    console.log('Connected clients:', numClients);
+
+    socket.on('disconnect', function() {
+        numClients--;
+        io.emit('stats', { numClients: numClients });
+
+        console.log('Connected clients:', numClients);
+    });
+});
+
+
+var iosa = io.of('/stackabuse');  
+iosa.on('connection', function(socket){  
+    console.log('Connected to Stack Abuse namespace');
+    socket.join('room 237', function(){
+      console.log(socket.rooms); // [ <socket.id>, 'room 237' ]
+      iosa.to('room 237', 'a new user has joined the room'); // broadcast to everyone in the room
+    });
+    iosa.to('room 237').emit('abuse', {room: 'room 237 has new user joined'});  
+
+    iosa.emit('stats', { data: 'some data' }); 
 });
 
 /**
