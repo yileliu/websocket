@@ -1,5 +1,5 @@
 # websocket
-
+[![Build Status](https://travis-ci.org/yileliu/websocketDemo.svg?branch=master)](https://travis-ci.org/yileliu/websocketDemo.svg)
 
 ## Install
 ```sh
