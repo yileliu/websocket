@@ -4,11 +4,10 @@
   "description": "a demo for html5 websocket",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha",
+    "test": "nyc mocha",
     "start": "node index.js",
     "chat": "node chatserver.js",
-    "coverage": "istanbul cover",
-    "coveralls": "cat ./coverage/lcov.info |coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,6 +26,7 @@
   "devDependencies": {
     "coveralls": "^2.12.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2"
   }
 }

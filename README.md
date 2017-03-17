@@ -1,6 +1,6 @@
 # websocket
 [![Build Status](https://travis-ci.org/yileliu/websocketDemo.svg?branch=master)](https://travis-ci.org/yileliu/websocketDemo.svg)
-
+[![Coverage Status](https://coveralls.io/repos/github/yileliu/websocketDemo/badge.svg?branch=master)](https://coveralls.io/github/yileliu/websocketDemo?branch=master)
 ## Install
 ```sh
 $ npm install
